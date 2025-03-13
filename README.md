@@ -33,4 +33,5 @@ kubectl port-forward service/config-service 8001:8888
 #Get the configuration
 http :8001/catalog-service/default
 
-
+#build and publish the image
+./gradlew bootBuildImage --imageName ghcr.io/fabiop35/config-service --publishImage -PregistryUrl=ghcr.io -PregistryUsername=fabiop35 -PregistryToken=<github_token>
